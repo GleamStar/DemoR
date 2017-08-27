@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>{{userName}} - Welcome to MSP RoadShow</h2>
+  <p>
+     Microsoft Student Partners - це саме ті люди, які живуть технологіями, 
+     але при цьому готові ділитись своїми знаннями з іншими ентузіастами. 
+     Більшість з них - це студенти, які мають вже мають технічну експертизу 
+     і компетенцію в роботі з технологіями Microsoft. 
+  </p>
+  <p>
+    Конференція цього року проходить у 5 містах
+  </p>
+  <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+      <agm-marker *ngFor="let m of markers" [label]="m.label" [latitude]="m.lat" [longitude]="m.lng">
+        
+      </agm-marker>
+ </agm-map>
+</ion-content>
