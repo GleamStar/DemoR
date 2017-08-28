@@ -1,0 +1,18 @@
+<ion-grid>
+  <h4>All frameworks</h4>
+
+  <filter-text (changed)="filterChanged($event)"></filter-text>
+
+  <ion-list *ngFor="let item of filteredFrameworks$ | async" >
+        <ion-list-header>
+      Classes
+        </ion-list-header>
+        <ion-item>
+            {{item.framework}}
+            <ion-note item-end>
+                {{item.year}}
+            </ion-note>
+        </ion-item>
+  </ion-list>
+
+</ion-grid>

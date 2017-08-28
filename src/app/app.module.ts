@@ -3,8 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { LinkedIn } from '@ionic-native/linkedin';
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login'
@@ -14,11 +12,10 @@ import { Facebook } from '@ionic-native/facebook';
 import { LoginProvider } from '../providers/login/login';
 import { IonicStorageModule } from '@ionic/storage';
 import { AgmCoreModule } from '@agm/core';
+
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
     HomePage,
     TabsPage,
     LoginPage
@@ -34,8 +31,6 @@ import { AgmCoreModule } from '@agm/core';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
     HomePage,
     TabsPage,
     LoginPage
@@ -49,4 +44,5 @@ import { AgmCoreModule } from '@agm/core';
     LoginProvider
   ]
 })
-export class AppModule {}
+export class AppModule {
+}
