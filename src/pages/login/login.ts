@@ -10,7 +10,6 @@ import { Storage } from '@ionic/storage';
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
- declare var WindowsAzure: any;
 
 @IonicPage()
 @Component({
@@ -19,21 +18,18 @@ import { Storage } from '@ionic/storage';
 })
 export class LoginPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private loginProvider: LoginProvider, private storage: Storage ) {
-     this.next("");
   }
 
-  loginFacebook(){
-     this.loginProvider.login(LoginScopes.Facebook)
-     .then(res => {
-       this.next(res);
-      })
+  async loginFacebook(){
+    let userName = await this.loginProvider.login(LoginScopes.Facebook);
+    this.next(userName);
   }
-  loginLinledln(){
-     this.loginProvider.login(LoginScopes.Linkedln)
-     .then(res => this.next(res))  
+  async loginLinledln(){
+    let userName = await this.loginProvider.login(LoginScopes.Linkedln);
+    this.next(userName);
   }
   next(result : string){
-    this.storage.set("name", result)
+    this.storage.set("name", result);
     this.navCtrl.push(TabsPage);
   }
 }

@@ -11,7 +11,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Facebook } from '@ionic-native/facebook';
 import { LoginProvider } from '../providers/login/login';
 import { IonicStorageModule } from '@ionic/storage';
-import { AgmCoreModule } from '@agm/core';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   declarations: [
@@ -21,12 +21,10 @@ import { AgmCoreModule } from '@agm/core';
     LoginPage
   ],
   imports: [
+    ComponentsModule,
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot(),
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyD7LbUekytH5aIzxgNjZf8a4LVWJZ2B-LY'
-    })
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
